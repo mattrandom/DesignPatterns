@@ -9,7 +9,7 @@ public class GameEngineSerializationCase implements Serializable {
     private int hp = 100;
     private String name;
 
-    private static GameEngineSerializationCase instance;
+    private static GameEngineSerializationCase INSTANCE;
 
     private GameEngineSerializationCase() {
     }
@@ -23,10 +23,10 @@ public class GameEngineSerializationCase implements Serializable {
     }
 
     public static GameEngineSerializationCase getInstance() {
-        if (instance == null) {
-            instance = new GameEngineSerializationCase();
+        if (INSTANCE == null) {
+            INSTANCE = new GameEngineSerializationCase();
         }
-        return instance;
+        return INSTANCE;
     }
 
     protected Object readResolve() {

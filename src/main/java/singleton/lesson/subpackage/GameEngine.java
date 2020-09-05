@@ -4,8 +4,8 @@ public class GameEngine {
     private int hp = 100;
     private String name;
 
-    private static GameEngine instance;
-    private static GameEngine instance3 = new GameEngine();
+    private static GameEngine INSTANCE;
+    private static final GameEngine INSTANCE3 = new GameEngine();
 
     private GameEngine() {
     }
@@ -18,36 +18,36 @@ public class GameEngine {
         }
     }
 
-    public static GameEngine getInstance() {
-        if (instance == null) {
-            instance = new GameEngine();
+    public static GameEngine getInstance() { // Lazy loading SINGLETON
+        if (INSTANCE == null) {
+            INSTANCE = new GameEngine();
         }
-        return instance;
+        return INSTANCE;
     }
 
     // I. Multi-threaded security - synchronized getInstance method:
     public synchronized static GameEngine getInstance1() {
-        if (instance == null) {
-            instance = new GameEngine();
+        if (INSTANCE == null) {
+            INSTANCE = new GameEngine();
         }
-        return instance;
+        return INSTANCE;
     }
 
     // II. Multi-threaded security - double check with internal synchronized block:
     public synchronized static GameEngine getInstance2() {
-        if (instance == null) {
+        if (INSTANCE == null) {
             synchronized (GameEngine.class) {
-                if (instance == null) {
-                    instance = new GameEngine();
+                if (INSTANCE == null) {
+                    INSTANCE = new GameEngine();
                 }
             }
         }
-        return instance;
+        return INSTANCE;
     }
 
-    // III. Multi-threaded security - static initialized field
+    // III. Multi-threaded security - static initialized field & static factory method
     public static GameEngine getInstance3() {
-        return instance3;
+        return INSTANCE3;
     }
 }
 
