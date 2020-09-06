@@ -4,6 +4,21 @@ import builder.lesson.house.House;
 
 public class Main {
     public static void main(String[] args) {
-        House house1 = new House("walls", "floors", "rooms", "windows", "doors", "garage");
+        House house = new House.HouseBuilder()
+                .buildWalls("walls")
+                .buildFloors("floors")
+                .buildRooms("rooms")
+                .buildRoof("roof")
+                .buildWindows("windows")
+                .buildDoors("doors")
+                .buildGarage("garage")
+                .build();
+
+//        House build = House.HouseBuilder
+//                .create()
+//                .buildWalls("Builder with static factory method .create()")
+//                .build();
+
+
     }
 }
