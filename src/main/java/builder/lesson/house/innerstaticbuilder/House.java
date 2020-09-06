@@ -1,4 +1,4 @@
-package builder.lesson.house;
+package builder.lesson.house.innerstaticbuilder;
 
 public class House {
     private String walls;
