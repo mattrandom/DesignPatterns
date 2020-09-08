@@ -1,8 +1,15 @@
 package factory.lesson;
 
+import factory.lesson.units.*;
+
 public class Main {
     public static void main(String[] args) {
-        Unit tank = new Tank(200, 0, 20);
-        Unit rifleman = new Rifleman(100, 0, 10);
+        Factory factory = new UnitFactory();
+
+        Unit tank = factory.createUnit(UnitType.TANK);
+        Unit rifleman = factory.createUnit(UnitType.RIFLEMAN);
+
+        System.out.println(tank);
+        System.out.println(rifleman);
     }
 }
