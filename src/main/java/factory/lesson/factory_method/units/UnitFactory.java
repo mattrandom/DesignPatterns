@@ -1,4 +1,4 @@
-package factory.lesson.units;
+package factory.lesson.factory_method.units;
 
 public class UnitFactory extends Factory {
 

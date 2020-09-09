@@ -1,4 +1,4 @@
-package factory.lesson.units;
+package factory.lesson.factory_method.units;
 
 public enum UnitType {
     TANK,

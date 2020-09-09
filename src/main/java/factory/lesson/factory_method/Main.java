@@ -1,6 +1,6 @@
-package factory.lesson;
+package factory.lesson.factory_method;
 
-import factory.lesson.units.*;
+import factory.lesson.factory_method.units.*;
 
 public class Main {
     public static void main(String[] args) {
