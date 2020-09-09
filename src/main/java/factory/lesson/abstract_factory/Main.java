@@ -1,18 +1,23 @@
 package factory.lesson.abstract_factory;
 
-import factory.lesson.abstract_factory.units.InfantryFactory;
-import factory.lesson.abstract_factory.units.InfantryUnit;
-import factory.lesson.abstract_factory.units.RedInfantryUnitFactory;
-import factory.lesson.abstract_factory.units.UnitType;
+import factory.lesson.abstract_factory.units.*;
 
 public class Main {
     public static void main(String[] args) {
-        InfantryFactory factory = new RedInfantryUnitFactory();
+         Factory blueFactory = new BlueFactory();
+         Factory redFactory = new RedFactory();
 
-        InfantryUnit tank = factory.createUnit(UnitType.TANK);
-        InfantryUnit rifleman = factory.createUnit(UnitType.RIFLEMAN);
+        InfantryUnit redInfantry = redFactory.createInfantryUnit(UnitType.RIFLEMAN);
+        MechanizedUnit redTank = redFactory.createMechanizedUnit(UnitType.TANK);
 
-        System.out.println(tank);
-        System.out.println(rifleman);
+        InfantryUnit blueInfantry = blueFactory.createInfantryUnit(UnitType.RIFLEMAN);
+        MechanizedUnit blueTank = blueFactory.createMechanizedUnit(UnitType.TANK);
+
+        AirUnit blueHelicopter = blueFactory.createAirUnit(UnitType.HELICOPTER);
+        AirUnit redHelicopter = redFactory.createAirUnit(UnitType.HELICOPTER);
+
+        System.out.println(redInfantry + "\n" + redTank + "\n" + blueInfantry + "\n" + blueTank
+                + "\n" + blueHelicopter + "\n" + redHelicopter);
+
     }
 }
