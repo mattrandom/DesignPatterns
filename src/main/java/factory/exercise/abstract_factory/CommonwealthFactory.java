@@ -21,9 +21,9 @@ public class CommonwealthFactory implements Factory {
     public Car buildFord(FordModel model) {
         switch (model) {
             case CMax:
-                return new Bmw("2.0", "Petrol", "2018", POSITION);
+                return new Ford("2.0", "Petrol", "2018", POSITION);
             case Focus:
-                return new Bmw("1.8", "Oil", "2016", POSITION);
+                return new Ford("1.8", "Oil", "2016", POSITION);
             default:
                 throw new IllegalArgumentException("You specified incorrect model");
         }
