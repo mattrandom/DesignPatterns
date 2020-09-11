@@ -1,4 +1,4 @@
-package di;
+package di.first_example;
 
 public class ServiceD implements Service {
 
