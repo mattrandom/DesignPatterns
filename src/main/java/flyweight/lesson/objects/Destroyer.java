@@ -1,25 +1,18 @@
 package flyweight.lesson.objects;
 
+/**
+ * field stats uses singleton instance of UnitStats which is initialized at UnitStatsRepository.class
+ */
 public class Destroyer {
-    private String name;
-    private int hp;
-    private int armour;
-    private int damageDealt;
-    private int speed;
     private int xCoordinate;
     private int yCoordinate;
     private int hpLeft;
-    private int resourceCost;
+    private UnitStats stats;
 
-    public Destroyer(String name, int hp, int armour, int damageDealt, int speed, int xCoordinate, int yCoordinate, int resourceCost) {
-        this.name = name;
-        this.hp = hp;
-        this.armour = armour;
-        this.damageDealt = damageDealt;
-        this.speed = speed;
+    public Destroyer(int xCoordinate, int yCoordinate) {
+        stats = UnitStatsRepository.getDestroyerStats();
         this.xCoordinate = xCoordinate;
         this.yCoordinate = yCoordinate;
-        this.hpLeft = hp;
-        this.resourceCost = resourceCost;
+        this.hpLeft = stats.getHp();
     }
 }
