@@ -6,7 +6,7 @@ import di.second_example.pattern_implementation.injector.SMSServiceInjector;
 import di.second_example.pattern_implementation.service_consumer.Consumer;
 
 /**
- * our application classes are responsible only for using the service.
+ * Our application classes are responsible only for using the service.
  * Service classes are created in injectors. Also if we have to further extend
  * our application to allow facebook messaging, we will have to write Service classes and injector classes only.
  *
