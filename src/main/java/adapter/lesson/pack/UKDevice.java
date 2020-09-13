@@ -1,4 +1,4 @@
-package adapter.lesson;
+package adapter.lesson.pack;
 
 public interface UKDevice {
 
