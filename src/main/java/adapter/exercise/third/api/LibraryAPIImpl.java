@@ -1,6 +1,5 @@
 package adapter.exercise.third.api;
 
-import java.io.PrintStream;
 import java.time.LocalDate;
 
 public class LibraryAPIImpl implements LibraryAPI {

@@ -18,4 +18,16 @@ public class User {
     public String getPesel() {
         return pesel;
     }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public LocalDate getDateOfBirth() {
+        return dateOfBirth;
+    }
 }
