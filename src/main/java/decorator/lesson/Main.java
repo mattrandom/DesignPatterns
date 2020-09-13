@@ -8,9 +8,14 @@ public class Main {
 
     private static void generateMap() {
         Terrain terrain = new Plain();
-        Terrain terrain1 = new ForestHill();
-        Terrain terrain2 = new SwampPlain();
-        Terrain terrain3 = new SwampForestPlain();
+        Terrain terrain1 = new Hill();
+        Terrain terrain2 = new SwampDecorator(new Hill());
+        Terrain terrain3 = new SwampDecorator(new ForestDecorator(new Plain()));
+        Terrain terrain4 = new RoadDecorator(new Hill());
+
+        System.out.println("SwampDecorator hill cost: " + terrain2.fuelCost());
+        System.out.println("SwampDecorator forest plain cost: " + terrain3.fuelCost());
+        System.out.println("RoadDecorator hill cost: " + terrain4.fuelCost() + " & Description: " + terrain4.getDescription());
 
     }
 }
