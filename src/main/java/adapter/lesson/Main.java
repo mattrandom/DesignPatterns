@@ -29,5 +29,30 @@ public class Main {
          */
         UKToContinentalAdapter adapter = new UKToContinentalAdapter(radioUk);
         continentalSocket.plugIn(adapter);
+
+        /**
+         * Two-way Adapter
+         */
+        ContinentalDevice continentalRadio = new ContinentalDevice() {
+            @Override
+            public void on() {
+                System.out.println("Continental radio is broadcasting from a British power socket");
+            }
+        };
+
+        UKDevice britishRadio = new UKDevice() {
+            @Override
+            public void powerOn() {
+                System.out.println("British radio is broadcasting from a Continental power socket");
+            }
+        };
+
+        ContinentalSocket continentalSocket2 = new ContinentalSocket();
+        UKSocket ukSocket2 = new UKSocket();
+
+        TwoWayAdapter twoWayAdapter = new TwoWayAdapter(britishRadio, continentalRadio);
+
+        continentalSocket2.plugIn(twoWayAdapter);
+        ukSocket2.plugIn(twoWayAdapter);
     }
 }
