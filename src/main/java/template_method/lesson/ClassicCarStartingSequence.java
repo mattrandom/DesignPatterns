@@ -11,5 +11,4 @@ public class ClassicCarStartingSequence extends CarStartingSequence {
     public void startTheIgnition() {
         System.out.println("Turn the key in the ignition to start the engine");
     }
-
 }
