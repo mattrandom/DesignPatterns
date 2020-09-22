@@ -1,5 +1,6 @@
 package command.lesson.workshop;
 
+// Receiver
 public class Robot {
 
     public void turnOn() {
