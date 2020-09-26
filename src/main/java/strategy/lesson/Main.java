@@ -1,14 +1,23 @@
 package strategy.lesson;
 
 import strategy.lesson.chef.Chef;
+import strategy.lesson.chef.egg_cooker.EggCooker;
+import strategy.lesson.chef.egg_cooker.HardBoiledEggCooker;
+import strategy.lesson.chef.egg_cooker.SoftBoiledEggCooker;
 
 public class Main {
     public static void main(String[] args) {
-        // New order - hard-boiled eggs
+
         Chef chef = new Chef("Gordon Gessler");
-        chef.cook(); // order completed successfully
+
+        // New order - hard-boiled eggs
+        EggCooker hardBoiledEggs = new HardBoiledEggCooker();
+        chef.setEggCooker(hardBoiledEggs);
+        chef.cook();
 
         // Another new order - soft-boiled eggs
-        chef.cook(); // order not executed
+        EggCooker softBoiledEggs = new SoftBoiledEggCooker();
+        chef.setEggCooker(softBoiledEggs);
+        chef.cook();
     }
 }
