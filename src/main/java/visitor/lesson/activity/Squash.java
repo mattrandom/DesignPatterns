@@ -1,13 +1,20 @@
 package visitor.lesson.activity;
 
-public class Squash {
+import visitor.lesson.visitor.Visitor;
+
+public class Squash implements Activity {
     private int minutesPlayed;
 
     public Squash(int minutesPlayed) {
         this.minutesPlayed = minutesPlayed;
     }
 
-    public void calculateCaloriesBurned() {
-        System.out.println("Calories burned playing squash: " + minutesPlayed * 20);
+    @Override
+    public void accept(Visitor visitor) {
+        visitor.visit(this);
+    }
+
+    public int getMinutesPlayed() {
+        return minutesPlayed;
     }
 }

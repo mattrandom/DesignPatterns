@@ -1,13 +1,20 @@
 package visitor.lesson.activity;
 
-public class Treadmill {
+import visitor.lesson.visitor.Visitor;
+
+public class Treadmill implements Activity {
     private int distance;
 
     public Treadmill(int distance) {
         this.distance = distance;
     }
 
-    public void calculateCaloriesBurned() {
-        System.out.println("Calories burned running on treadmill: " + distance * 3);
+    @Override
+    public void accept(Visitor visitor) {
+        visitor.visit(this);
+    }
+
+    public int getDistance() {
+        return distance;
     }
 }
